@@ -1,0 +1,34 @@
+Table reservations - 2023-10-24
+Backend from here:
+https://github.com/TadekDev/Restaurant-Reservations-System_Backend
+
+8 tables with 4 seats
+6 bar seats
+
+BACKEND:
+  Tables:
+    Reservations
+        "first_name": "Rick",
+        "last_name": "Sanchez",
+        "mobile_number": "202-555-0164",
+        "reservation_date": "2020-12-31",
+        "reservation_time": "20:00:00",
+        "people": 6
+    Tables
+        "table_name": "Bar #1",
+        "capacity": 1,
+        "status": "free",
+        "reservation_id": null
+    Users (login/profile) questioning - we'll do it if we have time
+        "first_name": "Rick",
+        "last_name": "Sanchez",
+        "mobile_number": "202-555-0164",
+
+Frontend Pages:
+  Create new user
+  Login
+  Reservation page
+   - Create / add reservation
+   - Read reservation (may not need this page)
+   - Update reservation
+   - Delete reservation????
