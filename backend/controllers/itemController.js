@@ -14,13 +14,13 @@ exports.getSingleItem = async (req, res) => {
 }
 
 exports.addNewItem = async (req, res) => {
-    await Item.create({
+    console.log(req.body);
+    
+    const result = await Item.create({
         name: req.body.name,
         price: req.body.price,
-        description: req.body.description,
-        category_id: req.params.id,        
-});
-    const result = await Item.findByPk(req.params.id);
+        description: req.body.desc
+    });
     return res.json(result);
 };
 

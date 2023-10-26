@@ -1,6 +1,7 @@
 Table reservations - 2023-10-24
 Backend from here:
-https://github.com/TadekDev/Restaurant-Reservations-System_Backend
+
+npm install express sequelize mysql2 cors --save
 
 8 tables with 4 seats
 6 bar seats
@@ -23,6 +24,45 @@ BACKEND:
         "first_name": "Rick",
         "last_name": "Sanchez",
         "mobile_number": "202-555-0164",
+
+
+Tables:
+ - table_id INT PK
+ - capacity INT  
+ - status_id INT FK
+
+DiningTableStatus:
+ - id INT PK
+ - status TEXT (reserved, available, hold)
+
+Reservations:
+ - id: INT PK
+ - reservation_date: datetime
+ - reservation_time: datetime
+ - cust_id: INT FK
+ - diningTable_id: INT FK
+ - peopleCnt
+ - res_status (booked, seated, finished, cancelled)
+
+Customers:
+ - id INT PK
+ - firstName: TEXT
+ - lastName: TEXT
+ - phone: TEXT
+ - email: email/text
+ - pw: text?
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 Frontend Pages:
   Create new user

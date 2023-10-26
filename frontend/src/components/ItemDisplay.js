@@ -1,3 +1,4 @@
+// display all the categories
 const ItemDisplay = ({list}) => {
     return (
         <div>

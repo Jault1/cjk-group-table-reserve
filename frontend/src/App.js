@@ -18,9 +18,10 @@ function App() {
     }
   } 
 
-  const createItem = async (itemName) => {
+  const createItem = async (itemName, itemPrice, itemDescription) => {
+    alert(itemPrice + " " + itemDescription)
     try {
-      const response = await apiConn.post("/items", {name: itemName});
+      const response = await apiConn.post("/items", {name: itemName, price: itemPrice, desc: itemDescription});
       console.log(response.data);
       getItems();
     } catch (error) {
