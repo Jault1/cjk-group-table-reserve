@@ -1,43 +1,43 @@
 import {useState, useEffect} from "react";
-import ItemDisplay from "./components/ItemDisplay";
-import AddItemForm from "./components/AddItemForm";
+import ReservationDisplay from "./components/ReservationDisplay";
+import AddReservationForm from "./components/AddReservationForm";
 
 import './App.css';
 import apiConn from './api/conn';
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [reservations, setReservations] = useState([]);
 
-  const getItems = async () => {
+  const getReservations = async () => {
     try {
-      const response = await apiConn.get("/items");
+      const response = await apiConn.get("/reservations");
       console.log(response.data);
-      setItems(response.data);
+      setReservations(response.data);
     } catch (error) {
       console.log(error.message);
     }
   } 
 
-  const createItem = async (itemName, itemPrice, itemDescription) => {
-    alert(itemPrice + " " + itemDescription)
+  const createReservation = async (reservationNo_of_guest, reservationRes_date, reservationRes_time) => {
+    alert(reservationRes_date + " " + reservationRes_time)
     try {
-      const response = await apiConn.post("/items", {name: itemName, price: itemPrice, desc: itemDescription});
+      const response = await apiConn.post("/reservations", {no_of_guest: reservationNo_of_guest, res_date: reservationRes_date, desc: reservationRes_time});
       console.log(response.data);
-      getItems();
+      getReservations();
     } catch (error) {
       console.log(error.message);
     }
   }
 
   useEffect(() => {
-    getItems();
+    getReservations();
   }, []);
 
   return (
     <div className="App">
-      <h1>Item List</h1>
-      <AddItemForm handlerAddItem={createItem}/>
-      <ItemDisplay list={items}/>
+      <h1>Reservation List</h1>
+      <AddReservationForm handlerAddReservation={createReservation}/>
+      <ReservationDisplay list={reservations}/>
     </div>
   );
 }

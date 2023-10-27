@@ -1,43 +1,53 @@
-const Item = require("../models/itemModel");
+const Reservation = require("../models/reservationModel");
 
-exports.getAllItems = async (req, res) => {
-    const result = await Item.findAll();
+exports.getAllReservations = async (req, res) => {
+    const result = await Reservation.findAll();
     res.json(result);
 }
 
-exports.getSingleItem = async (req, res) => {
-    const result = await Item.findByPk(req.params.id);
+exports.getSingleReservation = async (req, res) => {
+    const result = await Reservation.findByPk(req.params.res_id);
     if(result != null){
         return res.json(result);
     }
-    return res.send("Item not found");  
+    return res.send("Reservation not found");  
 }
 
-exports.addNewItem = async (req, res) => {
+exports.addNewReservation = async (req, res) => {
     console.log(req.body);
     
-    const result = await Item.create({
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.desc
+    const result = await Reservation.create({
+        no_of_guest: req.body.no_of_guest,
+        res_date: req.body.res_date,
+        res_time: req.body.res_time,
+        cust_notes: req.body.cust_notes,
+        user_id: req.body.user_id,
+        dt_id: req.body.dt_id
     });
     return res.json(result);
 };
 
-exports.editItem = async (req, res) => {
-    const result = await Item.findByPk(req.params.id);
+exports.editReservation = async (req, res) => {
+    const result = await Reservation.findByPk(req.params.res_id);
     if(result != null){
-        await Item.update({name: req.body.name}, {where: {id: req.params.id}});
+        await Reservation.update({
+            no_of_guest: req.body.no_of_guest,
+            res_date: req.body.res_date,
+            res_time: req.body.res_time,
+            cust_notes: req.body.cust_notes,
+            user_id: req.body.user_id,
+            dt_id: req.body.dt_id}, 
+            {where: {res_id: req.params.res_id}});
         return res.json(result);
     }
-    return res.send("Item not found"); 
+    return res.send("Reservation not found"); 
 }
 
-exports.deleteItem = async (req, res) => {
-    const result = await Item.findAll({where: {id: req.params.id}});
+exports.deleteReservation = async (req, res) => {
+    const result = await Reservation.findAll({where: {res_id: req.params.res_id}});
     if(result != null){
-        await Item.destroy({where: {id: req.params.id}});
+        await Reservation.destroy({where: {res_id: req.params.res_id}});
         return res.json(result);
     }
-    return res.send("Item not found"); 
+    return res.send("Reservation not found"); 
 }

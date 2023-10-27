@@ -10,31 +10,25 @@ const Item = sequelize.define("item", {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true, // Added this back in
     },    
     price: {
         type: DataTypes.DECIMAL(10, 2),
-        allowNull: false, // Changed this back to false
-        // defaultValue: 2.99
+        allowNull: true,
+        defaultValue: 2.99
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false, // Changed this back to false
-        // defaultValue: "Default description."
+        allowNull: true,
+        defaultValue: "Default description."
     }
     ,
     category_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true, // Changed this back to false
-        references: {
-          model: "categories",
-          key: "id",
-        },
-    },
-  },
-  {
-    timestamps: false,
-  }
-);
+        type: DataTypes.INTEGER
+    }
+
+}
+, {
+    timestamps: false
+});
 
 module.exports = Item;

@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 // DB Connection Configuration
-const sequelize = new Sequelize('ecommerce', 'root', '//Password\\', {
+const sequelize = new Sequelize('tblReservations', 'root', 'mysqlpa$$word', {
     host: 'localhost',
     dialect: 'mysql',
 });
