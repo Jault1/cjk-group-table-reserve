@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import ReservationDisplay from "./components/ReservationDisplay";
 import AddReservationForm from "./components/AddReservationForm";
+import AvailableTable from "./components/AvailableTable";
 
 import './App.css';
 import apiConn from './api/conn';
@@ -37,6 +38,7 @@ function App() {
     <div className="App">
       <h1>Reservation List</h1>
       <AddReservationForm handlerAddReservation={createReservation}/>
+      <AvailableTable handlerAddReservation={createReservation}/>
       <ReservationDisplay list={reservations}/>
     </div>
   );
