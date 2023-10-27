@@ -27,14 +27,6 @@ reservations;
 | dt_id       | int          | NO   |     | NULL    |                |
 +-------------+--------------+------+-----+---------+----------------+
 
-diningtablesstatus;
-+-------------+-------------+------+-----+---------+----------------+
-| Field       | Type        | Null | Key | Default | Extra          |
-+-------------+-------------+------+-----+---------+----------------+
-| dtStatus_id | int         | NO   | PRI | NULL    | auto_increment |
-| status      | varchar(25) | NO   |     | NULL    |                |
-+-------------+-------------+------+-----+---------+----------------+
-
 diningtables;      
 +-------------+------+------+-----+---------+----------------+
 | Field       | Type | Null | Key | Default | Extra          |
@@ -43,3 +35,14 @@ diningtables;
 | capacity    | int  | NO   |     | NULL    |                |
 | dtStatus_id | int  | YES  | MUL | NULL    |                |
 +-------------+------+------+-----+---------+----------------+
+
+ALTER TABLE diningtables
+  DROP COLUMN dtStatus_id;
+
+ALTER TABLE diningtables DROP FOREIGN KEY diningtables_ibfk_1;
+
+ALTER TABLE diningtables
+ADD min_cap INT(11) NOT NULL; 
+
+ALTER TABLE diningtables
+ADD max_cap INT(11) NOT NULL; 

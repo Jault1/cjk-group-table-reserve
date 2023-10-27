@@ -1,3 +1,4 @@
+=================================================
 CREATE DATABASE tblReservations;
 USE tblReservations;
 
@@ -18,52 +19,64 @@ CREATE TABLE `users` (
 CREATE TABLE `diningtables` (
   `dt_id` INT(11) AUTO_INCREMENT NOT NULL,
   `capacity` INT(11) NOT NULL, 
-  `dtStatus_id` INT(11),
-  PRIMARY KEY (dt_id),
-   FOREIGN KEY (dtStatus_id) 
-   REFERENCES diningtablesstatus(dtStatus_id)
-);
-
--- ADMIN will CRUD status
-CREATE TABLE `diningtablesstatus` (
-  `dtStatus_id` INT(11) AUTO_INCREMENT NOT NULL,
-  `status` VARCHAR(25) NOT NULL, -- (reserved, available, hold)
-    PRIMARY KEY (`dtStatus_id`)
-);
+  `min_cap` INT(11) NOT NULL, 
+  `max_cap` INT(11) NOT NULL, 
+  PRIMARY KEY (dt_id)
+  );
 
 -- CUSTOMERS will CRUD reservations
 CREATE TABLE `reservations` (
   `res_id` INT(11) AUTO_INCREMENT NOT NULL,
   `no_of_guest` INT NOT NULL,
-  `res_date` varchar(100) NOT NULL,
-  `res_time` varchar(100) NOT NULL,
+  `res_date` DATE NOT NULL,
+  `res_time` DATETIME NOT NULL,
   `cust_notes` varchar(100) NOT NULL,
   `user_id` INT(11) NOT NULL,
   `dt_id` INT(11) NOT NULL,
      PRIMARY KEY (`res_id`)
 );
+=================================================
 
-ALTER TABLE reservations
-MODIFY COLUMN res_date DATE NOT NULL;
+ALTER TABLE diningtables
+  DROP COLUMN dtStatus_id;
 
-ALTER TABLE reservations
-MODIFY COLUMN res_time DATETIME NOT NULL;
+ALTER TABLE diningtables DROP FOREIGN KEY diningtables_ibfk_1;
 
+ALTER TABLE diningtables
+ADD min_cap INT(11) NOT NULL; 
 
+ALTER TABLE diningtables
+ADD max_cap INT(11) NOT NULL; 
 
-
-
-
--- user_id: 1 & country_id: 1
-INSERT INTO users (username, password, email, firstName, lastName)
+INSERT INTO reservations (no_of_guest, res_date, res_time, cust_notes, user_id, dt_id)
     VALUES
-        ('jault', 'Skagen21', 'jault@w3schools.com', 'John', 'Ault'),
-        ('cault', 'Gateve15', 'cault@w3schools.com', 'Christian', 'Ault');
-INSERT INTO countries (name)
+        (3, '2023-10-29', '2023-10-31 12:00:00', 'Grandma in wheelchair', 1, 5);
++--------+-------------+------------+---------------------+-----------------------+---------+-------+
+| res_id | no_of_guest | res_date   | res_time            | cust_notes            | user_id | dt_id |
++--------+-------------+------------+---------------------+-----------------------+---------+-------+
+|      1 |           3 | 2023-10-29 | 2023-10-31 12:00:00 | Grandma in wheelchair |       1 |     5 |
++--------+-------------+------------+---------------------+-----------------------+---------+-------+
+
+=================================================
+INSERT INTO diningtables (capacity, min_cap, max_cap)
     VALUES
-        ('United States'),
-        ('Canada'),
-        ('Mexico');
+        (6, 4, 6),
+        (6, 4, 6),
+        (6, 4, 6),
+        (8, 6, 8),
+        (4, 1, 4),
+        (4, 1, 4),
+        (4, 1, 4),
+        (4, 1, 4),
+        (4, 1, 4),
+        (8, 6, 8)
+;
+
+
+
+
+
+
 
 SELECT c.name, a.user_id, a.country_id
     FROM countries c 

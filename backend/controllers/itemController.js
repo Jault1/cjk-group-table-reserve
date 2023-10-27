@@ -18,7 +18,7 @@ exports.addNewItem = async (req, res) => {
     
     const result = await Item.create({
         name: req.body.name,
-        price: req.body.price,
+        res_date: req.body.res_date,
         description: req.body.desc
     });
     return res.json(result);
