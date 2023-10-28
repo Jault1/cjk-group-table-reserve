@@ -11,6 +11,9 @@ import Table8Preview from '../images/Table-8-Preview.jpg';
 import Table9Preview from '../images/Table-9-Preview.jpg';
 import Table10Preview from '../images/Table-10-Preview.jpg';
 
+const tables4HeadCount=({listAvailable}) // passing tables that fit the requested headcount
+const tablesReserved=({listAvailable}) // passing tables reserved the requested date/time
+
 var tables=5;
 if (tables==5) {
         var element = document.getElementById("table5");

@@ -70,7 +70,7 @@ function App() {
       <h1>Reservation List</h1>
       <AddReservationForm handlerAddReservation={createReservation}/>
       <AvailableTable handlerAddReservation={createReservation}/>
-      <ReservationDisplay list={reservations}/>
+      <ReservationDisplay list={reservations} listAvailable={availableTables}/>
     </div>
   );
 }
