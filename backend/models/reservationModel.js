@@ -43,7 +43,7 @@ const Reservation = sequelize.define("reservation", {
         allowNull: false
     },
     res_time: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false
     },
     cust_notes: {

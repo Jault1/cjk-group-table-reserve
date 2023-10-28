@@ -8,6 +8,7 @@ import apiConn from './api/conn';
 
 function App() {
   const [reservations, setReservations] = useState([]);
+  const [availableTables, setAvailableTables] = useState([]);
 
   const getReservations = async () => {
     try {
@@ -19,10 +20,40 @@ function App() {
     }
   } 
 
-  const createReservation = async (reservationNo_of_guest, reservationRes_date, reservationRes_time) => {
-    alert(reservationRes_date + " " + reservationRes_time)
+  const getAvailableTables = async () => {
     try {
-      const response = await apiConn.post("/reservations", {no_of_guest: reservationNo_of_guest, res_date: reservationRes_date, desc: reservationRes_time});
+      const response = await apiConn.get("/reservations");
+      console.log(response.data);
+      setAvailableTables(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  } 
+  
+  const createReservation = async (
+    res_no_of_guest, 
+    res_res_date, 
+    res_res_time,
+    res_cust_notes,
+    res_user_id,
+    res_dt_id) => {
+  
+    alert(
+      res_no_of_guest + ' | ' +
+      res_res_date + ' | ' +
+      res_res_time + ' | ' +
+      res_cust_notes + ' | ' +
+      res_user_id + ' | ' +
+      res_dt_id)
+    try {
+      const response = await apiConn.post("/reservations", {
+        no_of_guest: res_no_of_guest, 
+        res_date: res_res_date, 
+        res_time: res_res_time,
+        cust_notes: res_cust_notes,
+        user_id: res_user_id,
+        dt_id: res_dt_id  
+      });
       console.log(response.data);
       getReservations();
     } catch (error) {

@@ -35,6 +35,15 @@ CREATE TABLE `reservations` (
   `dt_id` INT(11) NOT NULL,
      PRIMARY KEY (`res_id`)
 );
+
+ALTER TABLE `reservations` MODIFY `cust_notes` varchar(200);
+ALTER TABLE `reservations` MODIFY `res_time` varchar(50);
+
+UPDATE `reservations`
+SET res_time = '14:00:00'
+WHERE res_id = 1;
+
+
 =================================================
 
 ALTER TABLE diningtables
@@ -57,6 +66,21 @@ INSERT INTO reservations (no_of_guest, res_date, res_time, cust_notes, user_id, 
 |      1 |           3 | 2023-10-29 | 2023-10-31 12:00:00 | Grandma in wheelchair |       1 |     5 |
 +--------+-------------+------------+---------------------+-----------------------+---------+-------+
 
+=================================================
+=================================================
+-- Get tables that fit headcount where headcount = 5
+-- How do I get the headcount to the seqluelize
+-- HEADCOUNT
+select dt_id from diningtables 
+where 3 >= min_cap and 
+3 <= max_cap
+;
+
+-- RESERVATION DATE & TIME
+-- Retrieve tables reserved for that day and time
+select dt_id from reservations 
+where res_date = '2023-10-29' and res_time = '14:00:00'
+=================================================
 =================================================
 INSERT INTO diningtables (capacity, min_cap, max_cap)
     VALUES
