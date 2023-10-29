@@ -30,7 +30,7 @@ CREATE TABLE `reservations` (
   `no_of_guest` INT NOT NULL,
   `res_date` DATE NOT NULL,
   `res_time` DATETIME NOT NULL,
-  `cust_notes` varchar(100) NOT NULL,
+  `cust_notes` varchar(100),
   `user_id` INT(11) NOT NULL,
   `dt_id` INT(11) NOT NULL,
      PRIMARY KEY (`res_id`)

@@ -6,6 +6,7 @@ const sequelize = new Sequelize('tblReservations', 'root', 'mysqlpa$$word', {
     dialect: 'mysql',
 });
 
+
 // Test connection function
 async function testConnection() {
     try {
