@@ -1,4 +1,4 @@
-//import styles from './Footer.module.css';
+import './../styles.css'
 
 import twitter from './../images/social/twitter.png';
 import youtube from './../images/social/YouTube.png';
@@ -11,7 +11,7 @@ function Footer() {
     <div className="container border-top">
         <div className="row pt-5 pb-4">
             <div className="col-sm-9 legal-text">
-                <p>Get the latest news, tutorials, and more from MyWeather. Follow us on:</p>
+                <p>Get the most advanced table reservations system from TblReserve. Follow us on:</p>
             </div>
             <div className="col-lg-3 social">
                 <p className="ps-auto"> 
@@ -23,10 +23,7 @@ function Footer() {
         </div>
         <p>TblReserve and the TblReserve logo are either registered trademarks or trademarks of TblReserve in Canada, the United States, and/or other countries. All other trademarks are the property of their respective owners.</p>
         <p>
-        &copy; <script type="text/javascript">
-        document.write(new Date().getFullYear());
-        </script> 
-        TblReserve. All rights reserved. </p>        
+        &copy; 2023 TblReserve. All rights reserved. </p>        
 
     </div>
 </footer> 

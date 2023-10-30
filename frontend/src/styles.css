@@ -1,0 +1,37 @@
+#header {
+    background-color: #000;
+}
+
+body {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+h1 {
+    color: #fff !important;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #333 !important;
+    padding: 24px 0;
+}
+
+footer {
+    background-color: #3c3c3c;
+    color: #f1f1f1;
+    padding-bottom: 75px;
+}
+
+
+form {
+    background-color: #f1ebeb;
+    color: #666;
+    display: inline-block;
+    margin: auto;
+    padding: 40px;
+}
+
+td {
+    /* border: 1px solid salmon; */
+    text-align: right;
+}
