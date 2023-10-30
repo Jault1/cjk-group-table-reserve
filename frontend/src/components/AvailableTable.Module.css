@@ -45,8 +45,9 @@ body {
 #t1txt {
     font-size: 1.8vw;
     text-align: center;
-    position: relative;
-    top: -34%;
+    /* justify-content: center; */
+    /* position: relative; */
+    /* top: -35%; */
 }
 
 #table2 {
@@ -60,8 +61,8 @@ body {
 #t2txt {
     text-align: center;
     font-size: 1.8vw;
-    position: relative;
-    top: -34%;
+    /* position: relative; */
+    /* top: -34%; */
 }
 
 #table3 {
@@ -75,8 +76,8 @@ body {
 #t3txt {
     font-size: 1.8vw;
     text-align: center;
-    position: relative;
-    top: -34%;
+    /* position: relative; */
+    /* top: -34%; */
 }
 
 #table4 {
@@ -92,7 +93,7 @@ body {
     width: 180%;
     text-align: center;
     position: relative;
-    top: 20%;
+    top: 38%;
     left: -35%;
     transform: rotate(-90deg);
 }
@@ -108,8 +109,8 @@ body {
 #t5txt {
     font-size: 1.6vw;
     text-align: center;
-    position: relative;
-    top: -27%;
+    /* position: relative; */
+    /* top: -27%; */
 }
 
 #table6 {
@@ -123,8 +124,8 @@ body {
 #t6txt {
     font-size: 1.6vw;
     text-align: center;
-    position: relative;
-    top: -27%;
+    /* position: relative; */
+    /* top: -27%; */
 }
 
 #table7 {
@@ -138,8 +139,8 @@ body {
 #t7txt {
     font-size: 1.6vw;
     text-align: center;
-    position: relative;
-    top: -27%;
+    /* position: relative; */
+    /* top: -27%; */
 }
 
 #table8 {
@@ -155,7 +156,7 @@ body {
     width: 180%;
     text-align: center;
     position: relative;
-    top: 3%;
+    top: 30%;
     left: -35%;
     transform: rotate(-90deg);
 }
@@ -173,7 +174,7 @@ body {
     width: 180%;
     text-align: center;
     position: relative;
-    top: 3%;
+    top: 30%;
     left: -35%;
     transform: rotate(-90deg);
 }
@@ -189,8 +190,8 @@ body {
 #t10txt {
     font-size: 2vw;
     text-align: center;
-    position: relative;
-    top: -44%;
+    /* position: relative; */
+    /* top: -44%; */
 }
 
 .thover:hover {

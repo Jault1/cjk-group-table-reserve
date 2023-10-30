@@ -16,6 +16,14 @@ h2, h3, h4, h5, h6 {
     padding: 24px 0;
 }
 
+.menu {
+    text-align:left;
+}
+
+.menu-btn {
+    margin-bottom: 24px;
+}
+
 footer {
     background-color: #3c3c3c;
     color: #f1f1f1;
