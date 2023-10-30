@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 import {useState, useEffect} from "react";
 
 import Header from "./components/Header";
@@ -8,9 +7,6 @@ import Footer from "./components/Footer";
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./components/Home";
-// import { SearchWeekly } from "./components/SearchWeekly";
-// import { SearchHourly } from "./components/SearchHourly";
-
 import ReservationDisplay from "./components/ReservationDisplay";
 import AddReservationForm from "./components/AddReservationForm";
 import AvailableTable from "./components/AvailableTable";
@@ -94,29 +90,21 @@ function App() {
 
   return (
     <div className="App">
-
-<Header />
-          <HashRouter>
+      <Header />
+      <HashRouter>
         <div>    
           <Routes >
-          <Route path='/' element={<Home/>} />
-          {/* <Route path='/Hourly' element={<SearchHourly/>}/>
-          <Route path='/Weekly' element={<SearchWeekly/>} /> */}
-          <Route path='/AddReserve' element={<AddReservationForm handlerAddReservation={createReservation}/>}/>
-          <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
-          <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} />} />          
-
+            <Route path='/' element={<Home/>} />
+            {/* Add Reservation Form */}
+            <Route path='/AddReserve' element={<AddReservationForm handlerAddReservation={createReservation}/>}/>
+            {/* Available Table */}
+            <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
+            {/* Display Reservations */}
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} />} />          
           </Routes>
         </div>
       </HashRouter>
-
       <Footer />
-      {/* <h1>Reservation List</h1>
-      <AddReservationForm handlerAddReservation={createReservation}/> Show the Add reservation form 
-      <AvailableTable handlerAddReservation={createReservation}/>   Show the Table view image 
-      <ReservationDisplay list={reservations} listAvailable={availableTables} listtablesReserved={tblsReserved}/> 
-      <ReservationDisplay list={reservations} />  Show the reservations */}
-
     </div>
   );
 }
