@@ -1,5 +1,5 @@
-//import styles from './Header.module.css';
-import banner from "./../images/AdobeStock_211524227.png";
+import './../styles.css'
+import banner from "./../images/banner.png";
 
 function Header() {
   return (
@@ -13,7 +13,7 @@ function Header() {
       />
       <div
         id="header"
-        className="header container-fluid p-5 mb-5 bg-primary text-white text-center"
+        className="header container-fluid p-2 mb-2 text-white text-center"
       >
         <h1 className="mb-1">Table Reservation App</h1>
         <p>

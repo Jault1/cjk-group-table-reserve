@@ -1,4 +1,4 @@
-import './../App.css';
+import './../styles.css'
 
 import { useState } from "react";
 
@@ -29,7 +29,7 @@ const AddItemForm = ({ handlerAddItem }) => {
   return (
     <div>
       <form onSubmit={handlerSubmit}>
-      <label for="itemName">Name:</label>&nbsp;&nbsp;&nbsp;
+      <label for="itemName">Name:</label>
         <input id="itemName"
           type="text"
           name="name"
@@ -37,7 +37,7 @@ const AddItemForm = ({ handlerAddItem }) => {
           onChange={handlerName}
         /><br></br>
 
-      <label for="itemPrice">Price:</label>&nbsp;&nbsp;&nbsp;
+      <label for="itemPrice">Price:</label>
         <input id="itemPrice"
           type="text"
           name="price"

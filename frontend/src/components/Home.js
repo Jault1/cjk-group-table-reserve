@@ -5,9 +5,10 @@ function Home(){
     return(
     <>
     <div className="home">
-    <Link to="/AddReserve">Make Reservation</Link>
-    
-   <center><h3 className="pt-5"> Click the image to continue </h3></center>
+    <Link className="button" to="/AddReserve">Make Reservation</Link><br />
+    <Link to="/AddReserveWithTables">Check available tables</Link><br />
+    <Link to="/ShowReservations">View Reservation(s)</Link>
+
    </div>
    </>
    )}
