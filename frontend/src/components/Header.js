@@ -1,4 +1,4 @@
-import banner from "./../images/banner.png";
+// import banner from "./../images/banner.png";
 import './Header.css'
 import Navbar from './Nav';
 

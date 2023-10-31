@@ -1,6 +1,6 @@
 import Section from "./Section";
-import mario from "../images/mario.jpg";
-import adrian from "../images/adrian.jpg";
+import mario from "../images/AdobeStock_651285962.jpeg";
+import adrian from "../images/cooking.jpg";
 import ImagesCol from "./ImagesCol";
 
 export default function About({ bg }) {
