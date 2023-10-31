@@ -17,6 +17,7 @@ import AvailableTable from "./components/AvailableTable";
 import './App.css';
 import apiConn from './api/conn';
 
+
 function App() {
   const [reservations, setReservations] = useState([]);
   // const [availableTables, setAvailableTables] = useState([]);
@@ -93,8 +94,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <HashRouter>
+      <Header />
         <div>    
           <Routes >
             <Route path="*" element={<Page404 />} />
@@ -107,7 +108,6 @@ function App() {
             <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} />} /> 
             <Route path="/about" element={<PageAbout />} />
             <Route path="/login" element={<PageLogin />} />
-
           </Routes>
         </div>
       </HashRouter>

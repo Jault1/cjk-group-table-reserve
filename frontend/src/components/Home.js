@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
-import Nav from "./Nav";
+//import Nav from "./Nav";
 import chef from "../images/AdobeStock_651285962.jpeg";
 // import { Link } from 'react-router-dom';
 
@@ -10,15 +10,6 @@ function Home() {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <h2>Home</h2>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-12 col-md-4 menu">
-            <Nav />
-          </div>
           <div className="col-12 col-md-8">
             <img
               id="chef"
