@@ -27,7 +27,18 @@ const AddItemForm = ({ handlerAddItem }) => {
   };
 
   return (
-    <div>
+    <div className="container">
+    <div className="row">
+      <div className="col-12">
+        <h2>Home</h2>
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="col-12 col-md-4 menu">
+        <Nav />
+      </div>
+      <div className="col-12 col-md-8">
       <form onSubmit={handlerSubmit}>
       <label for="itemName">Name:</label>
         <input id="itemName"
@@ -54,7 +65,12 @@ const AddItemForm = ({ handlerAddItem }) => {
         /><br></br>
         <button className="btn btn-primary px-4 py-2 m-4">Add new</button>
       </form>
+      </div>
     </div>
+  </div>
+  
+  
+
   );
 };
 
