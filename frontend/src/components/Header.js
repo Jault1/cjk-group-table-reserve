@@ -1,3 +1,4 @@
+// import banner from "./../images/banner.png";
 import './Header.css'
 import Navbar from './Nav';
 
@@ -84,7 +85,6 @@ function Header() {
         <h1 className="mb-1" id="TRA">Table Reservation App</h1>
 
       </div>
-
     </>
   );
 }
