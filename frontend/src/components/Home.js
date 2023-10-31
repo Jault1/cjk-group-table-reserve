@@ -1,7 +1,5 @@
 import './../styles.css'
-import Nav from "./Nav";
 import chef from '../images/AdobeStock_651285962.jpeg';
-// import { Link } from 'react-router-dom';
 
 function Home(){
     return(
@@ -10,7 +8,7 @@ function Home(){
   <div className="row">
     <div className="col-9"><h2>Home</h2></div>
     <div className="col-4 menu">    
-        <Nav />
+        
     </div>
     <div className="col-6">
     <img
