@@ -4,6 +4,9 @@ import {useState, useEffect} from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PageAbout from "./components/PageAbout";
+import PageLogin from "./components/PageLogin";
+import Page404 from "./components/Page404";
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./components/Home";
@@ -94,13 +97,17 @@ function App() {
       <HashRouter>
         <div>    
           <Routes >
+            <Route path="*" element={<Page404 />} />
             <Route path='/' element={<Home/>} />
             {/* Add Reservation Form */}
             <Route path='/AddReserve' element={<AddReservationForm handlerAddReservation={createReservation}/>}/>
             {/* Available Table */}
             <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
             {/* Display Reservations */}
-            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} />} />          
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} />} /> 
+            <Route path="/about" element={<PageAbout />} />
+            <Route path="/login" element={<PageLogin />} />
+
           </Routes>
         </div>
       </HashRouter>

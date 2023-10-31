@@ -1,3 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./../styles.css";
+
+import Nav from "./Nav";
+
 // import styles from './AvailableTable.Module.css';
 // CAUSES THIS ErrOR: Line 1:8:  'styles' is defined but never used  no-unused-vars
 // FIXED BELOW:
@@ -63,18 +68,31 @@ const AvailableTable = ({list}) => {
 
     
     return (
-        <div>
-            <h2>List of reservations</h2>
+
+        <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2>Available table</h2>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-md-12 menu">
+            <Nav />
+          </div>
+          <div className="col-12 col-md-10">
+          <div>
+            {/* <h2>List of reservations</h2>
             <ul>
             {list && 
                 list.map((reservation) => (
                     <li key={reservation.res_id}>{reservation.res_id} | {reservation.no_of_guest} | {reservation.res_date} | {reservation.res_time} | {reservation.cust_notes} | {reservation.user_id} | {reservation.dt_id}</li>   
                 ))
             }
-            </ul>
+            </ul> */}
            
             <div id="floorPlan">
-                <img id="ImgFP" src={FloorPlan} alt="FloorPlan"/>
+                <img id="ImgFP" src={FloorPlan} alt="FloorPlan" />
                 <div className="thover available" id="table1"><p id="t1txt">Table 1</p><img id="preview1" src={Table1Preview} alt="Table 1 Preview"/></div>
                 <div className="thover available" id="table2"><p id="t2txt">Table 2</p><img id="preview2" src={Table2Preview} alt="Table 2 Preview"/></div>
                 <div className="thover available" id="table3"><p id="t3txt">Table 3</p><img id="preview3" src={Table3Preview} alt="Table 3 Preview"/></div>
@@ -87,6 +105,14 @@ const AvailableTable = ({list}) => {
                 <div className="thover" id="table10"><p id="t10txt">Table 10</p><img id="preview10" src={Table10Preview} alt="Table 10 Preview"/></div>
             </div>
         </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
     )
 }
 
