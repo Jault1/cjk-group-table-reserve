@@ -14,6 +14,21 @@ import AvailableTable from "./components/AvailableTable";
 import './App.css';
 import apiConn from './api/conn';
 
+
+import React from 'react';
+import './App.css';
+
+
+function App() {
+  return (    
+    <Login/>
+  );
+}
+
+export default App;
+
+
+
 function App() {
   const [reservations, setReservations] = useState([]);
   // const [availableTables, setAvailableTables] = useState([]);
