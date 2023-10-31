@@ -40,21 +40,6 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    alert(
-      "Form submission: " +
-        reservationNo_of_guest +
-        " | " +
-        reservationRes_date +
-        " | " +
-        reservationRes_time +
-        " | " +
-        reservationCust_notes +
-        " | " +
-        reservationUser_id +
-        " | " +
-        reservationDt_id +
-        " | "
-    );
 
     handlerAddReservation(
       reservationNo_of_guest,
