@@ -27,5 +27,17 @@ export const SidebarData = [
     path: '/ShowReservations',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
+  },
+  {
+    title: 'About Us',
+    path: '/about',
+    icon: <FaIcons.FaCartPlus />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Login',
+    path: '/login',
+    icon: <FaIcons.FaCartPlus />,
+    cName: 'nav-text'
   }
 ];
