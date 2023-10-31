@@ -6,19 +6,10 @@ body {
 #floorPlan {
     height: 100%;
     width: 60%;
+    max-width: 1120px;
     position: relative;
     top: 2px;
     left: 40%;
-}
-
-@media only screen and (max-width: 800px) {
-  #floorPlan {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    top: 2px;
-    left: 0%;
-  }
 }
 
 #ImgFP {
@@ -43,7 +34,7 @@ body {
 }
 
 #t1txt {
-    font-size: 1.8vw;
+    font-size: 2vw;
     text-align: center;
     /* justify-content: center; */
     /* position: relative; */
@@ -60,7 +51,7 @@ body {
 
 #t2txt {
     text-align: center;
-    font-size: 1.8vw;
+    font-size: 2vw;
     /* position: relative; */
     /* top: -34%; */
 }
@@ -74,7 +65,7 @@ body {
 }
 
 #t3txt {
-    font-size: 1.8vw;
+    font-size: 2vw;
     text-align: center;
     /* position: relative; */
     /* top: -34%; */
@@ -89,12 +80,12 @@ body {
 }
 
 #t4txt {
-    font-size: 1.8vw;
-    width: 180%;
+    font-size: 2.1vw;
+    width: 200%;
     text-align: center;
     position: relative;
     top: 38%;
-    left: -35%;
+    left: -48%;
     transform: rotate(-90deg);
 }
 
@@ -188,7 +179,7 @@ body {
 }
 
 #t10txt {
-    font-size: 2vw;
+    font-size: 2.1vw;
     text-align: center;
     /* position: relative; */
     /* top: -44%; */
@@ -521,4 +512,42 @@ body {
 
 #table10:hover #preview10 {
     visibility: visible;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  #floorPlan {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 2px;
+    left: 0%;
+  }
+  
+  #t1txt, #t2txt, #t3txt {
+    font-size: 3.4vw;
+  }
+
+  #t5txt, #t6txt, #t7txt, #t8txt, #t9txt {
+    font-size: 2.7vw;
+  }
+
+  #t4txt, #t10txt {
+    font-size: 3.6vw;
+  }
+}
+
+@media only screen and (min-width: 1921px) {  
+  #t1txt, #t2txt, #t3txt {
+    font-size: 38px;
+  }
+
+  #t5txt, #t6txt, #t7txt, #t8txt, #t9txt {
+    font-size: 31px;
+  }
+
+  #t4txt, #t10txt {
+    font-size: 40px;
+  }
 }
