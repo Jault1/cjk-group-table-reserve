@@ -3,7 +3,7 @@ const { dotenv } = require("env")
 
 
 // DB Connection Configuration
-const sequelize = new Sequelize('tblReservations', 'root', 'PasswordHere', {
+const sequelize = new Sequelize('tblReservations', 'root', 'mysqlpa$$word', {
     host: 'localhost',
     dialect: 'mysql',
 });

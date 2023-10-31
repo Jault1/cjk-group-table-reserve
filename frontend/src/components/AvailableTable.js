@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
-import Nav from "./Nav";
+import AddReservationForm from "./AddReservationForm";
 
 // import styles from './AvailableTable.Module.css';
 // CAUSES THIS ErrOR: Line 1:8:  'styles' is defined but never used  no-unused-vars
@@ -77,8 +77,8 @@ const AvailableTable = ({list}) => {
         </div>
 
         <div className="row">
-          <div className="col-12 col-md-12 menu">
-            <Nav />
+          <div className="col-12 col-md-2">
+            <AddReservationForm />
           </div>
           <div className="col-12 col-md-10">
           <div>
