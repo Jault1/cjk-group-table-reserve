@@ -13,10 +13,10 @@ const ReservationDisplay = ({list}) => {
         </div>
     
         <div className="row">
-          <div className="col-12 col-md-4 menu">
+          <div className="col-12 col-md-3 menu">
 What's going here?
           </div>
-          <div className="col-12 col-md-8">
+          <div className="col-12 col-md-9">
     
             <table className="table">
                 <thead>
