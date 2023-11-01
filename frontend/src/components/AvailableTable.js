@@ -66,9 +66,9 @@ import Table10Preview from '../images/Table-10-Preview.jpg';
 // display all the categories
 const AvailableTable = ({list}) => {
 
-    
-    return (
 
+    return (
+     
         <div className="container">
         <div className="row">
           <div className="col-12">
@@ -80,7 +80,7 @@ const AvailableTable = ({list}) => {
           <div className="col-12 col-md-2">
             <AddReservationForm />
           </div>
-          <div className="col-12 col-md-10">
+        <div className="col-12 col-md-10">
           <div>
            
             <div id="floorPlan">
@@ -96,14 +96,11 @@ const AvailableTable = ({list}) => {
                 <div className="thover" id="table9"><p id="t9txt">Table 9</p><img id="preview9" src={Table9Preview} alt="Table 9 Preview"/></div>
                 <div className="thover" id="table10"><p id="t10txt">Table 10</p><img id="preview10" src={Table10Preview} alt="Table 10 Preview"/></div>
             </div>
-        </div>
+          </div>
 
           </div>
         </div>
       </div>
-
-
-
 
     )
 }
