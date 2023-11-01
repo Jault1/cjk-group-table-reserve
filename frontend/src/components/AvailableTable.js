@@ -61,7 +61,7 @@ import Table10Preview from '../images/Table-10-Preview.jpg';
 // display all the categories
 const AvailableTable = ({list}) => {
 
-    
+
     return (
         <div>
             <h2>List of reservations</h2>
