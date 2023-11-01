@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
-import AddReservationForm from "./AddReservationForm";
+import AddReservationForm from "./ReservationAdd";
 
 // import styles from './AvailableTable.Module.css';
 // CAUSES THIS ErrOR: Line 1:8:  'styles' is defined but never used  no-unused-vars
