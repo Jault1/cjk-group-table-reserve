@@ -1,17 +1,24 @@
-// import styles from "./ReservationDisplay.module.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
-import Nav from "./Nav";
+// import { useState } from "react";
+const ReservationDisplay = ({list, handlerDeleteReservation, handlerEditReservation}) => {
 
-import { useState } from "react";
-const ReservationDisplay = ({list}) => {
-// These need passed in: , handlerDeleteReservation, handlerEditReservation
     return (
-        <div>
-            <h2>List of reservations</h2>
-            <table className="">
+        <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2>Reservations</h2>
+          </div>
+        </div>
+    
+        <div className="row">
+          <div className="col-12 col-md-4 menu">
+What's going here?
+          </div>
+          <div className="col-12 col-md-8">
+    
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Rervation ID</th>
@@ -32,6 +39,7 @@ const ReservationDisplay = ({list}) => {
 
                 list.map((reservation) => (
                     <tr key={reservation.res_id}>
+                        <td>{reservation.res_id}</td>
                         <td>{reservation.no_of_guest}</td>
                         <td>{reservation.res_date}</td>
                         <td>{reservation.res_time}</td>
@@ -46,7 +54,11 @@ const ReservationDisplay = ({list}) => {
                 ))}
             </tbody>
             </table>
-</div>
+          </div>
+        </div>
+      </div>
+
+
     )
 }
 

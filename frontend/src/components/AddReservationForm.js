@@ -1,8 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
-import Nav from "./Nav";
-
 import { useState } from "react";
 
 const AddReservationForm = ({ handlerAddReservation }) => {
@@ -52,18 +50,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <h2>Add reservation</h2>
-        </div>
-      </div>
 
-      <div className="row">
-        <div className="col-12 col-md-4 menu">
-          <Nav />
-        </div>
-        <div className="col-12 col-md-8">
           <form onSubmit={handlerSubmit}>
             <table>
               <tr>
@@ -184,9 +171,6 @@ const AddReservationForm = ({ handlerAddReservation }) => {
               </tr>
             </table>
           </form>
-        </div>
-      </div>
-    </div>
   );
 };
 

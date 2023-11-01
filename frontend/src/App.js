@@ -105,7 +105,9 @@ function App() {
             {/* Available Table */}
             <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
             {/* Display Reservations */}
-            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} />} /> 
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations}  />} /> 
+            {/* handlerDeleteReservation={} handlerEditReservation={} */}
+           
             <Route path="/about" element={<PageAbout />} />
             <Route path="/login" element={<PageLogin />} />
           </Routes>

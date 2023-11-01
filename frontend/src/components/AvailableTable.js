@@ -82,14 +82,6 @@ const AvailableTable = ({list}) => {
           </div>
         <div className="col-12 col-md-10">
           <div>
-            {/* <h2>List of reservations</h2>
-            <ul>
-            {list && 
-                list.map((reservation) => (
-                    <li key={reservation.res_id}>{reservation.res_id} | {reservation.no_of_guest} | {reservation.res_date} | {reservation.res_time} | {reservation.cust_notes} | {reservation.user_id} | {reservation.dt_id}</li>   
-                ))
-            }
-            </ul> */}
            
             <div id="floorPlan">
                 <img id="ImgFP" src={FloorPlan} alt="FloorPlan" />
