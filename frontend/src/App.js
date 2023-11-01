@@ -7,11 +7,12 @@ import Footer from "./components/Footer";
 import PageAbout from "./components/PageAbout";
 import PageLogin from "./components/PageLogin";
 import Page404 from "./components/Page404";
+import ResUpdate from "./components/ResUpdate";
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./components/Home";
 import ReservationDisplay from "./components/ReservationDisplay";
-import AddReservationForm from "./components/AddReservationForm";
+import AddReservationForm from "./components/ReservationAdd";
 import AvailableTable from "./components/AvailableTable";
 
 import './App.css';
@@ -105,9 +106,29 @@ function App() {
             {/* Available Table */}
             <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
             {/* Display Reservations */}
-            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations}  />} /> 
+            {/* <Route path='/updateRes/:res_id' element={<ResUpdate list={reservations} />} />  */}
+            <Route path="/about" element={<PageAbout />} />
+            <Route path="/update/:id" element={<ResUpdate />} />
+            <Route path="/login" element={<PageLogin />} />
+
             {/* handlerDeleteReservation={} handlerEditReservation={} */}
-           
+{/* Reservations:
+create       
+read 
+update
+delete
+
+Users:
+create       
+read 
+update
+delete */}
+
+
+
+
+       <Route path='/ShowReservations' element={<ReservationDisplay list={reservations}  />} /> 
+
             <Route path="/about" element={<PageAbout />} />
             <Route path="/login" element={<PageLogin />} />
           </Routes>

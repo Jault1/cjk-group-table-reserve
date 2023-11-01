@@ -1,5 +1,3 @@
-import PageTitle from "./SectionPageTitle";
-import Plaintext from "./SectionPlainText";
 
 export default function PageLogin() {
   return (
@@ -7,8 +5,6 @@ export default function PageLogin() {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8">
-          <PageTitle title={"Login"} />
-              <Plaintext>
                 <p className="lead">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam optio
                   deserunt possimus autem fuga? Soluta maxime corporis quasi dolor at,
@@ -20,7 +16,6 @@ export default function PageLogin() {
                   obcaecati exercitationem, dolore blanditiis ipsam cupiditate eius,
                   repellat nisi voluptatum quam aliquid.
                 </p>
-              </Plaintext>
           </div>
         </div>
       </div>

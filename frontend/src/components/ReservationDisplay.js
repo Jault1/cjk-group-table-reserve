@@ -2,8 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
 // import { useState } from "react";
-const ReservationDisplay = ({list, handlerDeleteReservation, handlerEditReservation}) => {
-
+const ReservationDisplay = ({list}) => {
+  // handlerDeleteReservation, handlerEditReservation
     return (
         <div className="container">
         <div className="row">
@@ -46,10 +46,11 @@ What's going here?
                         <td>{reservation.cust_notes}</td>
                         <td>{reservation.user_id}</td>
                         <td>{reservation.dt_id}</td>
+                        {/* <td onClick={() => handlerEditItem(reservation.res_id)}>📝</td>
+                        <td onClick={() => handlerDeleteItem(reservation.res_id)}>❌</td> */}
                         <td>📝</td>
                         <td>❌</td>
-                        {/* onClick={() => handlerEditItem(reservation.res_id)}
-                        onClick={() => handlerDeleteItem(reservation.res_id)} */}
+
                     </tr>
                 ))}
             </tbody>
