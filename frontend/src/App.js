@@ -7,7 +7,8 @@ import Footer from "./components/Footer";
 import PageAbout from "./components/PageAbout";
 import PageLogin from "./components/PageLogin";
 import Page404 from "./components/Page404";
-import ResUpdate from "./components/ResUpdate";
+import ViewList from "./components/ViewList";
+import Reservation from "./components/Reservation";
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./components/Home";
@@ -108,26 +109,12 @@ function App() {
             {/* Display Reservations */}
             {/* <Route path='/updateRes/:res_id' element={<ResUpdate list={reservations} />} />  */}
             <Route path="/about" element={<PageAbout />} />
-            <Route path="/update/:id" element={<ResUpdate />} />
             <Route path="/login" element={<PageLogin />} />
 
+            <Route path="/update/:id" element={<ViewList />} />
+            <Route path="/viewRegs" element={<Reservation list={reservations} />} />
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations}  />} /> 
             {/* handlerDeleteReservation={} handlerEditReservation={} */}
-{/* Reservations:
-create       
-read 
-update
-delete
-
-Users:
-create       
-read 
-update
-delete */}
-
-
-
-
-       <Route path='/ShowReservations' element={<ReservationDisplay list={reservations}  />} /> 
 
             <Route path="/about" element={<PageAbout />} />
             <Route path="/login" element={<PageLogin />} />

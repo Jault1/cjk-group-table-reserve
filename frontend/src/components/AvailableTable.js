@@ -2,13 +2,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
 
 import AddReservationForm from "./ReservationAdd";
-
+import { useState } from "react";
 // import styles from './AvailableTable.Module.css';
 // CAUSES THIS ErrOR: Line 1:8:  'styles' is defined but never used  no-unused-vars
 // FIXED BELOW:
 //https://stackoverflow.com/questions/44605873/react-warning-css-is-defined-but-never-used-no-unused-vars
 import './AvailableTable.Module.css'
-
+import apiConn from "../api/conn";
 import FloorPlan from '../images/FloorPlan.png';
 import Table1Preview from '../images/Table-1-Preview.jpg';
 import Table2Preview from '../images/Table-2-Preview.jpg';
@@ -64,9 +64,50 @@ import Table10Preview from '../images/Table-10-Preview.jpg';
 // }
 
 // display all the categories
+
+
 const AvailableTable = ({list}) => {
-
-
+  const [reservations, setReservations] = useState([]);
+  const getReservations = async () => {
+    try {
+      const response = await apiConn.get("/reservations");
+      console.log(response.data);
+      setReservations(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  } 
+  
+  const createReservation = async (
+    res_no_of_guest, 
+    res_res_date, 
+    res_res_time,
+    res_cust_notes,
+    res_user_id,
+    res_dt_id) => {
+  
+    alert(
+      res_no_of_guest + ' | ' +
+      res_res_date + ' | ' +
+      res_res_time + ' | ' +
+      res_cust_notes + ' | ' +
+      res_user_id + ' | ' +
+      res_dt_id)
+    try {
+      const response = await apiConn.post("/reservations", {
+        no_of_guest: res_no_of_guest, 
+        res_date: res_res_date, 
+        res_time: res_res_time,
+        cust_notes: res_cust_notes,
+        user_id: res_user_id,
+        dt_id: res_dt_id  
+      });
+      console.log(response.data);
+      getReservations();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
     return (
      
         <div className="container">
@@ -78,7 +119,7 @@ const AvailableTable = ({list}) => {
 
         <div className="row">
           <div className="col-12 col-md-2">
-            <AddReservationForm />
+            <AddReservationForm handlerAddReservation={createReservation}/>
           </div>
         <div className="col-12 col-md-10">
           <div>

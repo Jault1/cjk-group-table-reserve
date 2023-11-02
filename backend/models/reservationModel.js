@@ -53,23 +53,15 @@ const Reservation = sequelize.define("reservation", {
     user_id: {
         type: DataTypes.INTEGER,
         allowNull: false, 
-        // references: {
-        //   model: "categories",
-        //   key: "id",
-        // },
       },
       dt_id: {
         type: DataTypes.INTEGER,
         allowNull: false, 
-        // references: {
-        //   model: "categories",
-        //   key: "id",
-        // },
         },  
       },
   {
     timestamps: false,
   }
 );
-
+Reservation.sync();
 module.exports = Reservation;

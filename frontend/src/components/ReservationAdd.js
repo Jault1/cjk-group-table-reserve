@@ -4,10 +4,9 @@ import "./../styles.css";
 import { useState } from "react";
 
 const AddReservationForm = ({ handlerAddReservation }) => {
-  const [reservationNo_of_guest, setReservationNo_of_guest] = useState("");
+  const [reservationNo_of_guest, setReservationNo_of_guest] = useState(2);
   const [reservationRes_date, setReservationRes_date] = useState("");
-  const [reservationRes_time, setReservationRes_time] = useState("");
-
+  const [reservationRes_time, setReservationRes_time] = useState("7:00");
   const [reservationCust_notes, setReservationCust_notes] = useState("");
   const [reservationUser_id, setReservationUser_id] = useState("");
   const [reservationDt_id, setReservationDt_id] = useState("");
@@ -38,7 +37,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-
+    alert('ReservationAdd')
     handlerAddReservation(
       reservationNo_of_guest,
       reservationRes_date,
@@ -164,9 +163,8 @@ const AddReservationForm = ({ handlerAddReservation }) => {
               <tr>
                 <td></td>
                 <td class="text-center">
-                  <button className="btn btn-primary px-4 py-2 m-4">
-                    Add new
-                  </button>
+                  <input type='submit' value='Click here to ADD'  className="btn btn-primary px-4 py-2 m-4"/>
+
                 </td>
               </tr>
             </table>
