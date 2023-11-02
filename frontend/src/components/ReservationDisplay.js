@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./../styles.css";
+import * as MdIcons from "react-icons/md";
+import { IconContext } from 'react-icons';
 
 // import { useState } from "react";
 const ReservationDisplay = ({list}) => {
@@ -19,6 +21,7 @@ What's going here?
           <div className="col-12 col-md-9">
     
             <table className="table">
+            <IconContext.Provider value={{ size: '28px' }}>
                 <thead>
                     <tr>
                         <th>Rervation ID</th>
@@ -48,12 +51,13 @@ What's going here?
                         <td>{reservation.dt_id}</td>
                         {/* <td onClick={() => handlerEditItem(reservation.res_id)}>📝</td>
                         <td onClick={() => handlerDeleteItem(reservation.res_id)}>❌</td> */}
-                        <td>📝</td>
-                        <td>❌</td>
+                        <td><MdIcons.MdEditSquare /></td>
+                        <td><MdIcons.MdDeleteForever /></td>
 
                     </tr>
                 ))}
             </tbody>
+            </IconContext.Provider>
             </table>
           </div>
         </div>

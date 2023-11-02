@@ -1,7 +1,8 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
+import * as BsIcons from "react-icons/bs";
+import * as PiIcons from "react-icons/pi";
 
 export const SidebarData = [
   {
@@ -11,33 +12,27 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Make Reservation',
-    path: '/AddReserve',
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'Check available tables',
+    title: 'Create Reservation',
     path: '/AddReserveWithTables',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <BsIcons.BsFillCalendar2CheckFill />,
     cName: 'nav-text'
   },
   {
-    title: 'View Reservation',
+    title: 'View Reservations',
     path: '/ShowReservations',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <FaIcons.FaClipboardList />,
     cName: 'nav-text'
   },
   {
     title: 'About Us',
     path: '/about',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <PiIcons.PiUsersThreeFill />,
     cName: 'nav-text'
   },
   {
     title: 'Login',
     path: '/login',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <FaIcons.FaUserEdit />,
     cName: 'nav-text'
   }
 ];
