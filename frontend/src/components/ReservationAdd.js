@@ -81,7 +81,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
           <td>
             <input
               id="res_date"
-              value="2023-11-04"
+              pattern="yyyy-mm-dd"
               type="date"
               name="res_date"
               placeholder="res_date"
