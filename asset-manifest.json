@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/cjk-group-table-reserve/static/css/main.17216847.css",
+    "main.js": "/cjk-group-table-reserve/static/js/main.7e91ed1f.js",
+    "static/media/AdobeStock_651285962.jpeg": "/cjk-group-table-reserve/static/media/AdobeStock_651285962.763cb2758499b096e03e.jpeg",
+    "static/media/cooking.jpg": "/cjk-group-table-reserve/static/media/cooking.d04c2d3147814c5f3aa3.jpg",
+    "static/media/FloorPlan.png": "/cjk-group-table-reserve/static/media/FloorPlan.2dcf28898b714425039a.png",
+    "static/media/myLemon.png": "/cjk-group-table-reserve/static/media/myLemon.7c4c13506b27fbfff53c.png",
+    "static/media/Table-1-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-1-Preview.41ab06d689359f4e804b.jpg",
+    "static/media/Table-5-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-5-Preview.12a95b33b154d9b96342.jpg",
+    "static/media/Table-7-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-7-Preview.33e6ab41cc6db3944a96.jpg",
+    "static/media/Table-10-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-10-Preview.70bdfe064ce87c3f4733.jpg",
+    "static/media/Table-6-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-6-Preview.54082b2c17b9807bef9d.jpg",
+    "static/media/Table-2-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-2-Preview.b5a439148bbc454a2a82.jpg",
+    "static/media/Table-3-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-3-Preview.67cf0e3c7f898c3e6285.jpg",
+    "static/media/Table-8-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-8-Preview.2ab06d8344aa2725b333.jpg",
+    "static/media/Table-9-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-9-Preview.01596dac1dd27d3a3af9.jpg",
+    "static/media/Table-4-Preview.jpg": "/cjk-group-table-reserve/static/media/Table-4-Preview.a1bc79236712b13cce1d.jpg",
+    "index.html": "/cjk-group-table-reserve/index.html",
+    "main.17216847.css.map": "/cjk-group-table-reserve/static/css/main.17216847.css.map",
+    "main.7e91ed1f.js.map": "/cjk-group-table-reserve/static/js/main.7e91ed1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17216847.css",
+    "static/js/main.7e91ed1f.js"
+  ]
+}
