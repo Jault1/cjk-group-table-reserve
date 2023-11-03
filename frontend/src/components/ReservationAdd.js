@@ -4,6 +4,7 @@ import "./../styles.css";
 import { useState } from "react";
 
 const AddReservationForm = ({ handlerAddReservation }) => {
+
   const [reservationNo_of_guest, setReservationNo_of_guest] = useState(2);
   const [reservationRes_date, setReservationRes_date] = useState("");
   const [reservationRes_time, setReservationRes_time] = useState("7:00");
@@ -37,6 +38,8 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
+    alert("Thank you for your reservation.");
+
     handlerAddReservation(
       reservationNo_of_guest,
       reservationRes_date,
@@ -56,7 +59,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
           <td>
             <label htmlFor="no_of_guest">Headcount:</label>
           </td>
-          <td classname="text-center">
+          <td className="text-center">
             {/* Changed this text box to drop down (select) */}
             {/* Added the 'id' from text box to drop down */}
             {/* Added the "onChange" from text box to drop down */}
@@ -92,7 +95,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
           <td>
             <label htmlFor="res_time">Time:</label>
           </td>
-          <td classname="text-center">
+          <td className="text-center">
             <select
               id="res_time"
               name="res_time"

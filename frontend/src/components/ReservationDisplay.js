@@ -3,23 +3,34 @@ import "./../styles.css";
 import * as MdIcons from "react-icons/md";
 import { IconContext } from 'react-icons';
 
-// import { useState } from "react";
-const ReservationDisplay = ({ list, handlerDeleteReservation }) => {
-  // , handlerEditReservation
+import myLemon from "../images/myLemon.png";
+
+const ReservationDisplay = ({ list, handlerUpdateReservation, handlerDeleteReservation }) => {
+  
     return (
-        <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2>Reservations</h2>
-          </div>
+      <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <h2>View registrations.</h2>
         </div>
-    
-        <div className="row">
-          <div className="col-12 col-md-3 menu">
-&nbsp;          </div>
-          <div className="col-12 col-md-9">
-    
-            <table className="table">
+      </div>
+
+      <div className="row">
+        <div className="col-12 col-md-3">
+          <img
+            id="myLemon"
+            className="img-fluid"
+            src={myLemon}
+            alt="Lemon"
+            width="200"
+          />
+          <br />
+          <br />
+
+        </div>
+
+        <div className="col-12 col-md-6 text-center">
+        <table className="table">
             <IconContext.Provider value={{ size: '28px' }}>
                 <thead>
                     <tr>
@@ -49,18 +60,20 @@ const ReservationDisplay = ({ list, handlerDeleteReservation }) => {
                         <td>{reservation.user_id}</td>
                         <td>{reservation.dt_id}</td>
                         {/* <td >❌</td> */}
-                       <td><MdIcons.MdEditSquare /></td>
-                        <td onClick={() => handlerDeleteReservation(reservation.res_id)}>{reservation.res_id}<MdIcons.MdDeleteForever /></td>
-                        {/* <button className="btn btn-sm btn-danger" onClick={()=>{onDelete(todo)}}>Delete</button> */}
+                       {/* <td><MdIcons.MdEditSquare /></td> */}
+                       <td onClick={() => handlerUpdateReservation(reservation.res_id)}><MdIcons.MdEditSquare /></td>
+                       <td onClick={() => handlerDeleteReservation(reservation.res_id)}><MdIcons.MdDeleteForever /></td>
 
                     </tr>
                 ))}
             </tbody>
             </IconContext.Provider>
             </table>
-          </div>
+
         </div>
       </div>
+    </div>
+    
 
 
     )
