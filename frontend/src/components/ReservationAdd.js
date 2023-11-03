@@ -4,10 +4,9 @@ import "./../styles.css";
 import { useState } from "react";
 
 const AddReservationForm = ({ handlerAddReservation }) => {
-  const [reservationNo_of_guest, setReservationNo_of_guest] = useState("");
+  const [reservationNo_of_guest, setReservationNo_of_guest] = useState(2);
   const [reservationRes_date, setReservationRes_date] = useState("");
-  const [reservationRes_time, setReservationRes_time] = useState("");
-
+  const [reservationRes_time, setReservationRes_time] = useState("7:00");
   const [reservationCust_notes, setReservationCust_notes] = useState("");
   const [reservationUser_id, setReservationUser_id] = useState("");
   const [reservationDt_id, setReservationDt_id] = useState("");
@@ -38,7 +37,6 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-
     handlerAddReservation(
       reservationNo_of_guest,
       reservationRes_date,
@@ -53,18 +51,19 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
     <form onSubmit={handlerSubmit} id="rfFP">
       <table>
+        <tbody>
         <tr>
           <td>
             <label htmlFor="no_of_guest">Headcount:</label>
           </td>
-          <td class="text-center">
+          <td classname="text-center">
             {/* Changed this text box to drop down (select) */}
             {/* Added the 'id' from text box to drop down */}
             {/* Added the "onChange" from text box to drop down */}
 
             <select id="no_of_guest" onChange={handlerNo_of_guest}>
               <option value="1">1</option>
-              <option value="2" selected>2</option>
+              <option value="2" defaultValue>2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
@@ -93,7 +92,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
           <td>
             <label htmlFor="res_time">Time:</label>
           </td>
-          <td class="text-center">
+          <td classname="text-center">
             <select
               id="res_time"
               name="res_time"
@@ -163,12 +162,13 @@ const AddReservationForm = ({ handlerAddReservation }) => {
         </tr>
         <tr>
           <td></td>
-          <td class="text-center">
-            <button className="btn btn-primary px-4 py-2 m-4">
+          <td className="text-center">
+          <button type='submit' className="btn btn-primary px-4 py-2 m-4">
               Add new
             </button>
           </td>
         </tr>
+        </tbody>
       </table>
     </form>
   );
