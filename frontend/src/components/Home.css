@@ -1,0 +1,308 @@
+#HomeBody {
+    position: relative;
+    max-width: 1860px;
+    justify-items: center;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url("../images/lemon5.png");
+    background-position: center;
+}
+
+#tint {
+    background-color: #131313eb;
+}
+
+.tester{
+    position: relative;
+    display: inline-block;
+    /* margin: 20px; */
+    border-style: solid;
+    border-color: #fff;
+    border-width: 1px;
+}
+
+p {
+    font-size: 36px;
+    color: #fff;
+    display: inline-block;
+    margin: 4%;
+}
+
+img {
+    display: inline-block;
+    margin: 4%;
+}
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+#slot1 {
+    border-top: 0px;
+    border-left: 0px;
+    border-radius: 20px;
+    width: 53%;
+    margin-top: 4%;
+    margin-left: 4%;
+    float: left;
+}
+
+#slot2 {
+    border-top: 0px;
+    border-right: 0px;
+    margin-left: -0.1%;
+    border-radius: 20px;
+    width: 39%;
+    margin-top: 4%;
+    margin-right: 4%;
+    
+}
+
+#slot3 {
+    border-right: 0px;
+    border-radius: 20px;
+    margin-left: -0.05%;
+    margin-top: -0.05%;
+    float: left;
+}
+
+#slot4 {
+    border-left: 0px;
+    border-radius: 20px;
+    width: 53%;
+    margin-left: 4%;
+    margin-top: -34.7%;
+    float: left;
+}
+
+#slot5 {
+    border-left: 0px;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 4%;
+    margin-top: -3.15%;
+    float: left;
+}
+
+#slot6 {
+    border-right: 0px;
+    border-radius: 20px;
+    width: 53%;
+    margin-left: 4%;
+    margin-top: -5.35%;
+    float: right;
+}
+
+#slot7 {
+    
+}
+
+#slot8 {
+    
+}
+
+#slot9 {
+    
+}
+
+#slot10 {
+    
+}
+
+#slot11 {
+    
+}
+
+#slot12 {
+    
+}
+
+#slot13 {
+    
+}
+
+#slot14 {
+    
+}
+
+#slot15 {
+    
+}
+
+#slot16 {
+    
+}
+
+#slot17 {
+    
+}
+
+#slot17 {
+    
+}
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+#txt1 {
+    margin-left: 0px;
+
+}
+
+#txt2 {
+
+}
+
+#txt3 {
+
+}
+
+#txt4 {
+    display: block;
+    margin-top: 0px;
+}
+
+#txt5 {
+    
+}
+
+#txt6 {
+    
+}
+
+#txt7 {
+    
+}
+
+#txt8 {
+    
+}
+
+#txt9 {
+    
+}
+
+#txt10 {
+    
+}
+
+#txt11 {
+    
+}
+
+#txt12 {
+    
+}
+
+#txt13 {
+    
+}
+
+#txt14 {
+    
+}
+
+#txt15 {
+    
+}
+
+#txt16 {
+    
+}
+
+#txt17 {
+    
+}
+
+#txt18 {
+    
+}
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+#img1 {
+    width: 60%;
+    padding: 0px;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 20px;
+    
+}
+
+#img2 {
+    height: 562px;
+    margin-right: 0px;
+}
+
+#img3 {
+    width: 500px;
+}
+
+#img4 {
+    width: 620px;
+}
+
+#img5 {
+    width: 500px;
+}
+
+#img6 {
+    width: 500px;
+}
+
+#img7 {
+    width: 500px;
+}
+
+#img8 {
+    width: 500px;
+}
+
+#img9 {
+    width: 500px;
+}
+
+#img10 {
+    width: 500px;
+}
+
+#img11 {
+    width: 500px;
+}
+
+#img12 {
+    width: 500px;
+}
+
+#img13 {
+    width: 500px;
+}
+
+#img14 {
+    width: 500px;
+}
+
+#img15 {
+    width: 500px;
+}
+
+#img16 {
+    width: 500px;
+}
+
+#img17 {
+    width: 500px;
+}
+
+#img18 {
+    width: 500px;
+}
