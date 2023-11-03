@@ -4,7 +4,7 @@ const ModeContext = createContext();
 
 export function ModeProvider({ children }) {
   
-  const [isDark, setIsDark] = useState(false);
+  const [myResID, setIsDark] = useState(false);
   
   const handlerToggle = () => {
     setIsDark(() => !isDark);

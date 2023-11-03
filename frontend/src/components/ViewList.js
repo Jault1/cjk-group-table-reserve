@@ -57,7 +57,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
                 <td>
                   <label htmlFor="no_of_guest">No_of_guest:</label>
                 </td>
-                <td class="text-center">
+                <td className="text-center">
                   {/* Changed this text box to drop down (select) */}
                   {/* Added the 'id' from text box to drop down */}
                   {/* Added the "onChange" from text box to drop down */}
@@ -94,7 +94,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
                 <td>
                   <label htmlFor="res_time">Res_time:</label>
                 </td>
-                <td class="text-center">
+                <td className="text-center">
                   <select
                     id="res_time"
                     name="res_time"
@@ -163,17 +163,19 @@ const AddReservationForm = ({ handlerAddReservation }) => {
               </tr>
               <tr>
                 <td></td>
-                <td class="text-center">
+                <td className="text-center">
                   <input type='submit' value='Click here to ADD'  className="btn btn-primary px-4 py-2 m-4"/>
 
                 </td>
               </tr>
-            </table>
+              </table>
           </form>
   );
 };
 
-function ViewList({ list, handlerDeleteReservation, handlerEditReservation }) {
+function ViewList({ list,  
+    handlerDeleteReservation,
+    handlerEditReservation }) {
   return (
     // This creates the table that you are adding to 
     <div className="container">

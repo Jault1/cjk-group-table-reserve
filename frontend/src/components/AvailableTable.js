@@ -129,13 +129,13 @@ const AvailableTable = ({ list }) => {
     res_user_id,
     res_dt_id) => {
   
-    alert(
-      res_no_of_guest + ' | ' +
-      res_res_date + ' | ' +
-      res_res_time + ' | ' +
-      res_cust_notes + ' | ' +
-      res_user_id + ' | ' +
-      res_dt_id)
+    // alert(
+    //   res_no_of_guest + ' | ' +
+    //   res_res_date + ' | ' +
+    //   res_res_time + ' | ' +
+    //   res_cust_notes + ' | ' +
+    //   res_user_id + ' | ' +
+    //   res_dt_id)
     try {
       const response = await apiConn.post("/reservations", {
         no_of_guest: res_no_of_guest, 

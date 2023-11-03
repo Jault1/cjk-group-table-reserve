@@ -118,7 +118,7 @@ function Reservation() {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Rervation ID</th>
+              <th>Rervation 3ID</th>
               <th>Number of guests</th>
               <th>Reserve Date</th>
               <th>Reserve Time</th>

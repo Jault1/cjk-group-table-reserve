@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import {useState, useEffect} from "react";
+import {useState, useEffect } from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -8,7 +8,6 @@ import PageAbout from "./components/PageAbout";
 import PageLogin from "./components/PageLogin";
 import Page404 from "./components/Page404";
 import ViewList from "./components/ViewList";
-import Reservation from "./components/Reservation";
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./components/Home";
@@ -18,7 +17,6 @@ import AvailableTable from "./components/AvailableTable";
 
 import './App.css';
 import apiConn from './api/conn';
-
 
 function App() {
   const [reservations, setReservations] = useState([]);
@@ -35,29 +33,17 @@ function App() {
       console.log(error.message);
     }
   } 
-
-  // Get availableTables (that match headcount) from the DB and save to useState
-  // const getAvailableTables = async () => {
-  //   try {
-  //     const response = await apiConn.get("/reservations");
-  //     console.log(response.data);
-  //     setAvailableTables(response.data);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // } 
-
-    // Get availableTables (that match headcount) from the DB and save to useState
-    // const getTblsReserved = async () => {
-    //   try {
-    //     const response = await apiConn.get("/reservations");
-    //     console.log(response.data);
-    //     setTblsReserved(response.data);
-    //   } catch (error) {
-    //     console.log(error.message);
-    //   }
-    // } 
-  
+//  const handlerDeleteProduct = (id) => {
+  const deleteReservation = async (id) => {
+    try {
+      alert(id);
+      const response = await apiConn.delete(`/reservations/${id}`, { });
+      console.log(response.data);
+      getReservations();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
   
   const createReservation = async (
     res_no_of_guest, 
@@ -66,14 +52,7 @@ function App() {
     res_cust_notes,
     res_user_id,
     res_dt_id) => {
-  
-    alert(
-      res_no_of_guest + ' | ' +
-      res_res_date + ' | ' +
-      res_res_time + ' | ' +
-      res_cust_notes + ' | ' +
-      res_user_id + ' | ' +
-      res_dt_id)
+
     try {
       const response = await apiConn.post("/reservations", {
         no_of_guest: res_no_of_guest, 
@@ -112,8 +91,7 @@ function App() {
             <Route path="/login" element={<PageLogin />} />
 
             <Route path="/update/:id" element={<ViewList />} />
-            <Route path="/viewRegs" element={<Reservation list={reservations} />} />
-            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations}  />} /> 
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} handlerDeleteReservation={deleteReservation} />} /> 
             {/* handlerDeleteReservation={} handlerEditReservation={} */}
 
             <Route path="/about" element={<PageAbout />} />

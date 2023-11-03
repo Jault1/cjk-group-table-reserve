@@ -4,8 +4,8 @@ import * as MdIcons from "react-icons/md";
 import { IconContext } from 'react-icons';
 
 // import { useState } from "react";
-const ReservationDisplay = ({list}) => {
-  // handlerDeleteReservation, handlerEditReservation
+const ReservationDisplay = ({ list, handlerDeleteReservation }) => {
+  // , handlerEditReservation
     return (
         <div className="container">
         <div className="row">
@@ -16,8 +16,7 @@ const ReservationDisplay = ({list}) => {
     
         <div className="row">
           <div className="col-12 col-md-3 menu">
-What's going here?
-          </div>
+&nbsp;          </div>
           <div className="col-12 col-md-9">
     
             <table className="table">
@@ -49,10 +48,10 @@ What's going here?
                         <td>{reservation.cust_notes}</td>
                         <td>{reservation.user_id}</td>
                         <td>{reservation.dt_id}</td>
-                        {/* <td onClick={() => handlerEditItem(reservation.res_id)}>📝</td>
-                        <td onClick={() => handlerDeleteItem(reservation.res_id)}>❌</td> */}
-                        <td><MdIcons.MdEditSquare /></td>
-                        <td><MdIcons.MdDeleteForever /></td>
+                        {/* <td >❌</td> */}
+                       <td><MdIcons.MdEditSquare /></td>
+                        <td onClick={() => handlerDeleteReservation(reservation.res_id)}>{reservation.res_id}<MdIcons.MdDeleteForever /></td>
+                        {/* <button className="btn btn-sm btn-danger" onClick={()=>{onDelete(todo)}}>Delete</button> */}
 
                     </tr>
                 ))}

@@ -37,7 +37,6 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    alert('ReservationAdd')
     handlerAddReservation(
       reservationNo_of_guest,
       reservationRes_date,
@@ -52,18 +51,19 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
     <form onSubmit={handlerSubmit} id="rfFP">
       <table>
+        <tbody>
         <tr>
           <td>
             <label htmlFor="no_of_guest">Headcount:</label>
           </td>
-          <td class="text-center">
+          <td classname="text-center">
             {/* Changed this text box to drop down (select) */}
             {/* Added the 'id' from text box to drop down */}
             {/* Added the "onChange" from text box to drop down */}
 
             <select id="no_of_guest" onChange={handlerNo_of_guest}>
               <option value="1">1</option>
-              <option value="2" selected>2</option>
+              <option value="2" defaultValue>2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
@@ -92,7 +92,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
           <td>
             <label htmlFor="res_time">Time:</label>
           </td>
-          <td class="text-center">
+          <td classname="text-center">
             <select
               id="res_time"
               name="res_time"
@@ -162,12 +162,13 @@ const AddReservationForm = ({ handlerAddReservation }) => {
         </tr>
         <tr>
           <td></td>
-          <td class="text-center">
-            <button className="btn btn-primary px-4 py-2 m-4">
+          <td className="text-center">
+          <button type='submit' className="btn btn-primary px-4 py-2 m-4">
               Add new
             </button>
           </td>
         </tr>
+        </tbody>
       </table>
     </form>
   );
