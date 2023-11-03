@@ -20,31 +20,8 @@ import apiConn from './api/conn';
 
 function App() {
   const [reservations, setReservations] = useState([]);
-  // const [availableTables, setAvailableTables] = useState([]);
-  // const [tblsReserved, setTblsReserved] = useState([]);
 
-// Get reservations from the DB and save to useState
-  const getReservations = async () => {
-    try {
-      const response = await apiConn.get("/reservations");
-      console.log(response.data);
-      setReservations(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  } 
-//  const handlerDeleteProduct = (id) => {
-  const deleteReservation = async (id) => {
-    try {
-      alert(id);
-      const response = await apiConn.delete(`/reservations/${id}`, { });
-      console.log(response.data);
-      getReservations();
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
-  
+  // CREATE << THis one isn't being used >>
   const createReservation = async (
     res_no_of_guest, 
     res_res_date, 
@@ -54,6 +31,7 @@ function App() {
     res_dt_id) => {
 
     try {
+      alert("Thank you for your reservation.");
       const response = await apiConn.post("/reservations", {
         no_of_guest: res_no_of_guest, 
         res_date: res_res_date, 
@@ -68,6 +46,58 @@ function App() {
       console.log(error.message);
     }
   }
+
+  // READ
+  const getReservations = async () => {
+    try {
+      alert("Reading reservations");
+      const response = await apiConn.get("/reservations");
+      console.log(response.data);
+      setReservations(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  } 
+    
+  // UPDATE
+  const updateReservation = async (
+    res_res_id, 
+    res_no_of_guest, 
+    res_res_date, 
+    res_res_time,
+    res_cust_notes,
+    res_user_id,
+    res_dt_id) => {
+
+      try {
+        alert("Updating reservation ID: " + res_res_id);
+        const response = await apiConn.put(`/reservations/${res_res_id}`, {
+          no_of_guest: res_no_of_guest, 
+          res_date: res_res_date, 
+          res_time: res_res_time,
+          cust_notes: res_cust_notes,
+          user_id: res_user_id,
+          dt_id: res_dt_id  
+        });
+        console.log(response.data);
+        getReservations();
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+
+  // DELETE
+  const deleteReservation = async (id) => {
+    try {
+      alert("Deleting reservation ID: " + id);
+      const response = await apiConn.delete(`/reservations/${id}`, { });
+      console.log(response.data);
+      getReservations();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
 
   useEffect(() => {
     getReservations();
@@ -91,9 +121,8 @@ function App() {
             <Route path="/login" element={<PageLogin />} />
 
             <Route path="/update/:id" element={<ViewList />} />
-            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} handlerDeleteReservation={deleteReservation} />} /> 
-            {/* handlerDeleteReservation={} handlerEditReservation={} */}
-
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} handlerUpdateReservation={updateReservation} handlerDeleteReservation={deleteReservation} />} /> 
+            
             <Route path="/about" element={<PageAbout />} />
             <Route path="/login" element={<PageLogin />} />
           </Routes>

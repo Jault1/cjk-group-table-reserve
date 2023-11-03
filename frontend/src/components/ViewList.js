@@ -38,7 +38,7 @@ const AddReservationForm = ({ handlerAddReservation }) => {
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    alert('ReservationAdd')
+    alert('ReservationAdd VIEWLIST?')
     handlerAddReservation(
       reservationNo_of_guest,
       reservationRes_date,
