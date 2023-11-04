@@ -7,12 +7,16 @@ import Footer from "./components/Footer";
 import PageAbout from "./components/PageAbout";
 import PageLogin from "./components/PageLogin";
 import Page404 from "./components/Page404";
-import ViewList from "./components/ViewList";
+// import ViewList from "./components/ViewList";
+
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./components/Home";
+
+import Reservation from "./components/Reservation";
+
 import ReservationDisplay from "./components/ReservationDisplay";
-import AddReservationForm from "./components/ReservationAdd";
+import ReservationDisplayNew from "./components/ReservationDisplayNew";
 import AvailableTable from "./components/AvailableTable";
 
 import './App.css';
@@ -111,18 +115,14 @@ function App() {
           <Routes >
             <Route path="*" element={<Page404 />} />
             <Route path='/' element={<Home/>} />
-            {/* Add Reservation Form */}
-            <Route path='/AddReserve' element={<AddReservationForm handlerAddReservation={createReservation}/>}/>
-            {/* Available Table */}
-            <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
-            {/* Display Reservations */}
-            {/* <Route path='/updateRes/:res_id' element={<ResUpdate list={reservations} />} />  */}
-            <Route path="/about" element={<PageAbout />} />
-            <Route path="/login" element={<PageLogin />} />
 
-            <Route path="/update/:id" element={<ViewList />} />
-            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} handlerUpdateReservation={updateReservation} handlerDeleteReservation={deleteReservation} />} /> 
-            
+            <Route path='/AddReserveWithTables' element={<AvailableTable handlerAddReservation={createReservation}/>} />          
+
+            <Route path='/ShowReservations' element={<ReservationDisplay list={reservations} handlerUpdateReservation={updateReservation} handlerDeleteReservation={deleteReservation} />} />             
+
+        {/* <Route path="/update/:id" element={<Reservation list={reservations} />} /> */}
+            <Route path="/update" element={<Reservation list={reservations} />} />
+
             <Route path="/about" element={<PageAbout />} />
             <Route path="/login" element={<PageLogin />} />
           </Routes>

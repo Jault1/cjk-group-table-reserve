@@ -1,75 +1,124 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require("./conn");
+const userModel = require("../Model/userModel")
+const postModel = require("../Model/postModel")
+const bcrypt = require("bcrypt")
+const jwt = require('jsonwebtoken');
 
-const User = sequelize.define("user", {
-  // | res_id      | int          | NO   | PRI | NULL    | auto_increment |
-  // | no_of_guest | int          | NO   |     | NULL    |                |
-  // | res_date    | date         | NO   |     | NULL    |                |
-  // | res_time    | datetime     | NO   |     | NULL    |                |
-  // | cust_notes  | varchar(100) | NO   |     | NULL    |                |
-  // | user_id     | int          | NO   |     | NULL    |                |
-  // | dt_id       | int          | NO   |     | NULL    |                |
-  
-  // id > res_id
-  // name > no_of_guest
-  // price > res_date
-  // description > res_time
-  // ADD NEW > cust_notes
-  // category_id > user_id
-  // ADD NEW > dt_id
+const superSecretKey = "aaaaasdasdasdasdasdasdedasdasdadewadasdawdasdadsdasdazxdasdasdasdas11"
 
-  // type: DataTypes.STRING,
-  // type: DataTypes.INTEGER,
-  // type: DataTypes.DECIMAL(10, 2),
-  // type: DataTypes.TEXT,
+async function showUsers(request, response) {
 
-  // primaryKey: true,
-  // autoIncrement: true,
-  // allowNull: false,
-  // defaultValue: 2.99
-  // unique: true, // Added this back in
-
-  res_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+  let token = request.query.token;
+  jwt.verify(token, superSecretKey, (err, result)=>{
+   if (err) {
+    response.redirect('http://localhost:3000/404');
+    response.end()
+    return
+   }
+  })
+  let users = await userModel.findAll({
+    attributes:{
+      exclude:['password', 'updatedAt']
     },
-  no_of_guest: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },    
-    res_date: {
-        type: DataTypes.DATEONLY,
-        allowNull: false
-    },
-    res_time: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    cust_notes: {
-          type: DataTypes.TEXT,
-          allowNull: true
-      },
-    user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false, 
-        // references: {
-        //   model: "categories",
-        //   key: "id",
-        // },
-      },
-      dt_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false, 
-        // references: {
-        //   model: "categories",
-        //   key: "id",
-        // },
-        },  
-      },
-  {
-    timestamps: false,
+    include:{
+      model:postModel
+    }
+
+  });
+    response.json(users)
+    response.end();
   }
-);
 
-module.exports = User;
+function showUser(request, response){
+  userModel.findOne({
+    attributes:{
+      exclude:['password']
+    }
+  },{
+    where:{
+      id:request.params.id
+    }
+  })
+  .then((result)=>{
+    response.json(result)
+    response.end();
+  })
+  .catch((err)=>{
+    console.log(err);
+    response.status(500).json(err)
+  })
+}
+
+
+function loginUser(req, res) {
+  userModel.findOne({
+    where:{
+      user_name:req.body.user_name
+    }
+  }).then((result)=>{
+
+    if(!result){
+      res.status(400).json({message:"Incorrect Email"})
+      return
+    }
+
+    if (bcrypt.compare(req.body.password, result.password)){
+      res.json({message:"WELCOME YOUVE LOGGED IN", userData:result})
+      return;
+    }
+
+    res.status(400).json({message:"Incorrect Pass"})
+  })
+}
+
+
+function creatUsers(request, response) {
+  userModel.create({
+    user_name: request.body.user_name,
+    email: request.body.email,
+    password: request.body.password
+  })
+  .then((result)=>{
+
+  let token =  jwt.sign(result.user_name, superSecretKey);
+    response.json({
+      user_name:result.user_name,
+      token
+    })
+  })
+  .catch((err)=>{
+    console.log(err);
+    response.status(500).json(err)
+  }
+  )
+}
+
+function updateUsers(request, response) {
+  userModel.update(request.body, {where:{id:request.params.id}})
+  .then((result)=>response.send(result))
+  .catch((err)=>{
+    console.log(err);
+    response.status(500).json(err)
+  })
+}
+
+function deleteUser(request, response) {
+  userModel.destroy({
+    where:{
+      id:request.params.id
+    }
+  }).then((result)=>response.send(result))
+  .catch((err)=>{
+    console.log(err);
+    response.status(500).json(err)
+  })
+}
+
+
+module.exports = {
+  showUsers,
+  creatUsers,
+  updateUsers,
+  deleteUser,
+  loginUser,
+  showUser
+}

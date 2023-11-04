@@ -1,14 +1,22 @@
-import { useState, useContext } from 'react';
-// import { v4 as uuid } from 'uuid';
+// Use a combination of useState and useContext
+import { useState, useContext } from "react";
+// import uuid & you'll need to run: npm install uuid
+import { v4 as uuid } from "uuid";
 
+// import ViewList from "./ViewList";
 import styles from './Reservation.module.css'
-import ViewList from './ViewList';
 
-import ReservationContext from '../context/ReservationContext';
+import ReservationContext from "../context/ReservationContext";
+
 import Button from './Button';
+import ReservationDisplay from "./ReservationDisplay";
+import ReservationDisplayNew from "./ReservationDisplayNew";
 
-function Reservation() {
-  const [list, setList] = useState([]);
+function Reservation({ mylist, handlerUpdateReservation }) {
+  // handlerDeleteReservation
+  const ctx = useContext(ReservationContext);
+
+  const [list, setList] = useState([mylist]);
   const [isEditing, setIsEditing] = useState(false);
   
   const blankForm = {
@@ -22,32 +30,40 @@ function Reservation() {
   }
   const [form, setForm] = useState(blankForm);
  
-  /*
-    CREATE: Add a new reservation into the list
-  */
-  // const handlerAddReservation = () => {
-  //   const newReservation = {
-  //     id: uuid(),
-  //     res_id: ctx.res_id,
-  //     no_of_guest: ctx.count,
-  //     res_date: ctx.res_date,
-  //     res_time: ctx.res_time,
-  //     total: ctx.count * ctx.price * (100-ctx.res_time)/100,
-  //   } 
-  //   const newList = [...list, newReservation];
-  //   setList(newList);    
-  // }
-  
-  /*
-    DELETE a reservation from the list according to the given ID
-  */
-  const handlerDeleteReservation = (id) => {
-   
-    // Create a new reservation list with everything, except the reservation with matching ID
-    const newList = list.filter((reservation) => reservation.id !== id);
-    setList(newList);
-  }
+            /*
+              CREATE: Add a new reservation into the list
+            */
+              const handlerAddReservation = () => {
+                const newReservation = {
+                  id: uuid(),
+                  name: ctx.name,
+                  quantity: ctx.count,
+                  price: ctx.price,
+                  discount: ctx.discount,
+                  total: (ctx.count * ctx.price * (100 - ctx.discount)) / 100,
+                };
+                const newList = [...list, newReservation];
+                setList(newList);
+              };
+            
 
+                /*
+                DELETE a reservation from the list according to the given ID
+              */
+                const handlerDeleteReservation = (id) => {
+                  // Create a new reservation list with everything, except the reservation with matching ID
+                  const newList = list.filter((reservation) => reservation.id !== id);
+                  setList(newList);
+                };
+            
+                const handlerDeleteReservationDisable = () => {
+                  // Disable the delete button on edit
+                  // Do nothing - disables it
+                  // Don't want to uddate the list like above, but would like to disable the 
+                  // button or not show it.
+                };
+            
+            
   /*
     UPDATE: Submit edit form values into current reservation list 
   */
@@ -77,6 +93,7 @@ function Reservation() {
     Edit an existing reservation ID with values fileld into edit form
   */
   const handlerEditForm = (id) => {
+    alert("id inside handlerEditForm on ReservationDisplayNew: " + id)
     const i = list.findIndex((reservation) => reservation.id === id)
     const editValues = {
       index: i,
@@ -105,14 +122,22 @@ function Reservation() {
 
   return (
     <div className={`${styles.container}`}>
-      {/* <Card
-        handlerAddReservation={handlerAddReservation}
-      /> */}
-      <ViewList 
-        list={list} 
-        handlerDeleteReservation={handlerDeleteReservation}
-        handlerEditReservation={handlerEditForm}
-      />
+      {/* <Toggle />
+      <Card handlerAddReservation={handlerAddReservation} /> */}
+{isEditing && (
+  <ReservationDisplayNew
+    list={mylist}
+    handlerDeleteItem={handlerDeleteReservationDisable}  // Pass a dummy handler
+    handlerEditItem={handlerEditForm}
+  />
+)}
+{(!isEditing)  && (
+  <ReservationDisplayNew
+    list={mylist}
+    handlerDeleteItem={handlerDeleteReservation}
+    handlerEditItem={handlerEditForm}
+  />
+)}      
       {isEditing && 
       <form className={styles.form} onSubmit={handlerSubmitForm}>
         <table className={styles.table}>
