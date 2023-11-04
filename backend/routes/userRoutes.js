@@ -1,15 +1,30 @@
-const express = require("express");
-const router = express.Router();
-const userController = require("../controllers/userController");
+const express = require('express')
+const userRouter = express.Router();
 
-router.get("/", userController.getAllUsers);
+const {showUsers, creatUsers, updateUsers, deleteUser, loginUser, showUser} = require('../controller/users')
 
-router.get("/:res_id", userController.getSingleUser);
+// get all users GET: /users
+userRouter.get('/', showUsers )
 
-router.post("/", userController.addNewUser);
+// add new user POST /users
+userRouter.post('/', creatUsers)
 
-router.put("/:res_id", userController.editUser);
+//get a user with id GET /users/1
+userRouter.get('/:id', showUser)
 
-router.delete("/:res_id", userController.deleteUser);
+// update a user with id PUT /users/1
+userRouter.put('/:id', updateUsers)
 
-module.exports = router;
+// delete a user with id DELETE /users/1
+userRouter.delete('/:id', deleteUser)
+
+function verifyCorrectLocation(req, res, next){
+  if (req.path == '/login'){
+    next();
+  } else {
+    res.send("not allowed")
+  }
+}
+userRouter.post('/login', verifyCorrectLocation, loginUser)
+
+module.exports = userRouter;

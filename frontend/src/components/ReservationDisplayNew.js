@@ -5,13 +5,13 @@ import { IconContext } from 'react-icons';
 
 import myLemon from "../images/myLemon.png";
 
-const ReservationDisplay = ({ list, handlerUpdateReservation, handlerDeleteReservation }) => {
+const ReservationDisplayNew = ({ list, handlerEditItem, handlerDeleteItem }) => {
   
     return (
       <div className="container">
       <div className="row">
         <div className="col-12">
-          <h2>View reservations (reserveDisplay).</h2>
+          <h2>View reservations. (reserveDisplayNew)</h2>
         </div>
       </div>
 
@@ -50,21 +50,20 @@ const ReservationDisplay = ({ list, handlerUpdateReservation, handlerDeleteReser
 
             {list && 
 
-                list.map((reservation) => (
-                    <tr key={reservation.res_id}>
-                        <td>{reservation.res_id}</td>
-                        <td>{reservation.no_of_guest}</td>
-                        <td>{reservation.res_date}</td>
-                        <td>{reservation.res_time}</td>
-                        <td>{reservation.cust_notes}</td>
-                        <td>{reservation.user_id}</td>
-                        <td>{reservation.dt_id}</td>
-                        {/* <td >❌</td> */}
-                       {/* <td><MdIcons.MdEditSquare /></td> */}
-                       <td onClick={() => handlerUpdateReservation(reservation.res_id)}><MdIcons.MdEditSquare /></td>
-                       <td onClick={() => handlerDeleteReservation(reservation.res_id)}><MdIcons.MdDeleteForever /></td>
+list.map((list) => ( alert(list.user_id)
+                    //   <tr key={list.res_id}>
+                    //     <td>{list.res_id}</td>
+                    //     <td>{list.no_of_guest}</td>
+                    //     <td>{list.res_date}</td>
+                    //     <td>{list.res_time}</td>
+                    //     <td>{list.cust_notes}</td>
+                    //     <td>{list.user_id}</td>
+                    //     <td>{list.dt_id}</td>
+                    //    {/* <td onClick={() => handlerEditItem(list.res_id)}><MdIcons.MdEditSquare /></td> */}
+                    //    <td onClick={(alert(`$(list.res_id)`)) }><MdIcons.MdEditSquare /></td>
+                    //    <td onClick={() => handlerDeleteItem(list.res_id)}><MdIcons.MdDeleteForever /></td>
 
-                    </tr>
+                    // </tr>
                 ))}
             </tbody>
             </IconContext.Provider>
@@ -76,9 +75,7 @@ const ReservationDisplay = ({ list, handlerUpdateReservation, handlerDeleteReser
       </div>
     </div>
     
-
-
     )
 }
 
-export default ReservationDisplay;
+export default ReservationDisplayNew;
